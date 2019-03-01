@@ -28,7 +28,10 @@ function connect() {
         setConnected(true);
         console.log('Connected: ' + frame);
         stompClient.subscribe('/topic/greetings', function (greeting) {
-            showGreeting(JSON.parse(greeting.body));
+            var json = JSON.parse(greeting.body);
+            showGreeting(json);
+            var msg = new SpeechSynthesisUtterance(json.mensagem);
+            window.speechSynthesis.speak(msg);
         });
     });
 
@@ -47,7 +50,7 @@ function sendName() {
 
     if (mensagem.trim()) {
         stompClient.send("/app/hello", {}, JSON.stringify({'nome': nome, 'mensagem': mensagem}));
-        $("#mensagem").val("")
+        $("#mensagem").val("");
     } else {
         alert("Digite alguma coisa antes de enviar bocó.");
     }
