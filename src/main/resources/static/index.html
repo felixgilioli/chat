@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Orion</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/main.css" rel="stylesheet">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/app.js"></script>
+
+    <meta charset="UTF-8">
+    <style>
+        .navbar {
+            border-radius: 0 !important;
+            border: none !important;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                Linkedin Dark
+            </a>
+        </div>
+    </div>
+</nav>
+<div id="main-content" class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form-inline">
+                <input type="text" id="mensagem" style="width: 70%" class="form-control" placeholder="Digite sua mensagem seu oreia seca...">
+                <button id="send" class="btn btn-primary" type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table id="conversation" class="table table-striped">
+                <thead>
+                <tr>
+                    <th style="width: 10%">Nome</th>
+                    <th>Mensagem</th>
+                </tr>
+                </thead>
+                <tbody id="greetings">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
