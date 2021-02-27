@@ -52,7 +52,7 @@ function sendName() {
         stompClient.send("/app/hello", {}, JSON.stringify({'nome': nome, 'mensagem': mensagem}));
         $("#mensagem").val("");
     } else {
-        alert("Digite alguma coisa antes de enviar bocó.");
+        alert("Digite uma mensagem válida!");
     }
 
 }
